@@ -22,7 +22,7 @@ corre mas rapido sin hacer el test unitario y sin firefox, sera un lio ir tomand
 
 para guardar en python :
 	
-	'capturas/screen.png'
+	'folder/nombre.png'
 
 usar driver.quit() para evitar tener el navegador abierto en memoria
 
