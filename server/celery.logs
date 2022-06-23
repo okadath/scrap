@@ -1,0 +1,9 @@
+You are using `-A` as an option of the worker sub-command:
+celery worker -A celeryapp <...>
+
+The support for this usage was removed in Celery 5.0. Instead you should use `-A` as a global option:
+celery -A celeryapp worker <...>
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: -A

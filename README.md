@@ -39,7 +39,13 @@ usar polyglot
 
 
 
+instalar chromewebdriver:
+sudo apt-get install chromium-chromedriver
+
+en raspberry hay errores hay que instalar rust para selenoum y todo el dev de python
 
 
 
 
+
+las plantillas en flask siempre deben ir en /templates

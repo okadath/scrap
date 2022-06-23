@@ -7,8 +7,14 @@ name = "pypi"
 bs4 = "*"
 selenium = "*"
 flask = "*"
+django = "*"
+redis = "*"
+flower = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.8"
+
+[packages.celery]
+extras = [ "redis",]
