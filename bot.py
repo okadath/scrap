@@ -15,6 +15,16 @@ parser.add_argument("-f", "--firefox", help="Usar Firefox", action="store_true")
 parser.add_argument("-H", "--headless", help="Headless, es visible o no el navegador", action="store_true")
 args = parser.parse_args()
 
+
+
+def init_client_web():
+	chrome_options = GoogleOptions()
+	chrome_options.add_argument("--headless")
+	driver = webdriver.Chrome(options=chrome_options)
+	driver.set_window_size(1000, 700) # optional
+	return driver
+
+
 def init_client():
 	try:
 		if args.google:
@@ -101,7 +111,7 @@ def to_window_manager():
 	# except Exception as e:
 	# 	print(e) 
 
-driver=init_client()
+driver=init_client_web()
 driver.get("http://10.0.0.1/")
 sleep(1)
 login(driver)

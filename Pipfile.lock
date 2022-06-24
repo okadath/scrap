@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "408ea2f99ee6f99a2ba6e7341f1fb6afcaca83e8907af63f240e2aa712b77738"
+            "sha256": "b4fd5c9253c9b025f002e32c16a893c4358d1deb0bffc3a51e720464e8e1e8f4"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -101,6 +101,14 @@
             ],
             "index": "pypi",
             "version": "==5.2.7"
+        },
+        "celery-singleton": {
+            "hashes": [
+                "sha256:260ce4978e631f8682ea0ccb03d7f3b87d42bc20e04e9bd46ddb78a2f8035d1e",
+                "sha256:76b30a1bbe31d42030924b3eecfcaae2ab3ab99bf43e607cd46437f012434420"
+            ],
+            "index": "pypi",
+            "version": "==0.3.1"
         },
         "certifi": {
             "hashes": [
@@ -419,10 +427,10 @@
         },
         "selenium": {
             "hashes": [
-                "sha256:ba5b2633f43cf6fe9d308fa4a6996e00a101ab9cb1aad6fd91ae1f3dbe57f56f"
+                "sha256:f67402b8f973aaa98d9c55b8f9aa63532009cd1859b2222a8b9800354942d8bc"
             ],
             "index": "pypi",
-            "version": "==4.2.0"
+            "version": "==4.3.0"
         },
         "six": {
             "hashes": [
