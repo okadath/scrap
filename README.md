@@ -37,6 +37,7 @@ descargar geckodriver actualizado para usarlo en ubuntu, descargar y descomprimi
 
 usar polyglot
 
+    export PATH=$PATH:/home/okadath/Desktop/python/bot_local/geckodriver
 
 
 instalar chromewebdriver:
@@ -46,6 +47,6 @@ en raspberry hay errores hay que instalar rust para selenoum y todo el dev de py
 
 
 
-
+https://tekshinobi.com/django-celery-rabbitmq-redis-broker-results-backend/
 
 las plantillas en flask siempre deben ir en /templates
