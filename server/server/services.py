@@ -26,23 +26,23 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
 
 
-# def init_client_web():
-#     chrome_options = GoogleOptions()
-#     chrome_options.add_argument("--headless")
-#     driver = webdriver.Chrome(options=chrome_options)
-#     driver.set_window_size(1000, 700) # optional
-#     return driver
-
 def init_client_web():
-    f_profile = webdriver.FirefoxProfile()
-    # options = FirefoxOptions()
-    options = Options()
-
-    # options.add_argument("-headless") 
-    # options.headless = True
-    driver = webdriver.Firefox(firefox_profile=f_profile,  options=options)
-    driver.set_window_size(1000, 700)
+    chrome_options = GoogleOptions()
+    # chrome_options.add_argument("--headless")
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.set_window_size(1000, 700) # optional
     return driver
+
+# def init_client_web():
+#     f_profile = webdriver.FirefoxProfile()
+#     # options = FirefoxOptions()
+#     options = Options()
+
+#     # options.add_argument("-headless") 
+#     # options.headless = True
+#     driver = webdriver.Firefox(firefox_profile=f_profile,  options=options)
+#     driver.set_window_size(1000, 700)
+#     return driver
 
 
 # def init_client():
@@ -158,3 +158,4 @@ def core():
 
 
 
+# core()

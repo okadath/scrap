@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from server.tasks import delayed_add
+from server.tasks import delayed_add,delayed_bot
 import time
 
 from django.shortcuts import HttpResponse
@@ -15,8 +15,11 @@ def index(request):
 		# print(res.ready())
 	if request.method == "POST":
 		# print(request.POST)
+		print("<sas")
 		# for counter in range(2):
-			delayed_add.delay()
+		delayed_bot.delay()
+		# for counter in range(2):
+		# 	delayed_add.delay(3, counter)
 			# print(a)
 	# 	res = AsyncResult(a.task_id)
 	# 	print(res.ready())

@@ -11,6 +11,6 @@ from celery import Celery
 # app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'server.settings')
-app = Celery('server_tasks') #Nota 1
+app = Celery('server_tasks', broker=settings.CELERY_BROKER_URL) #Nota 1
 app.config_from_object('django.conf:settings', namespace='CELERY') #Nota 2
-app.autodiscover_tasks() #Nota 3
+app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)#Nota 3
