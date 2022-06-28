@@ -28,7 +28,7 @@ from selenium.webdriver.firefox.options import Options
 
 def init_client_web():
     chrome_options = GoogleOptions()
-    # chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--headless")
     driver = webdriver.Chrome(options=chrome_options)
     driver.set_window_size(1000, 700) # optional
     return driver

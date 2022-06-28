@@ -7,6 +7,7 @@ from django.shortcuts import HttpResponse
 # from .tasks import delayed_add
 from celery.result import AsyncResult
 
+import os
 
 # Create your views here.
 def index(request):
@@ -16,10 +17,12 @@ def index(request):
 	if request.method == "POST":
 		# print(request.POST)
 		print("<sas")
+		os.system("/home/okadath/Desktop/python/bot_local/venv/bin/python /home/okadath/Desktop/python/bot_local/bot.py")
+
 		# for counter in range(2):
-		delayed_bot.delay()
+		# delayed_bot.delay()
 		# for counter in range(2):
-		# 	delayed_add.delay(3, counter)
+			# delayed_add.delay(3, counter)
 			# print(a)
 	# 	res = AsyncResult(a.task_id)
 	# 	print(res.ready())

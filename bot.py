@@ -19,12 +19,12 @@ args = parser.parse_args()
 from selenium.webdriver.firefox.options import Options
 
 
-def init_client_web():
-	chrome_options = GoogleOptions()
-	# chrome_options.add_argument("--headless")
-	driver = webdriver.Chrome(options=chrome_options)
-	driver.set_window_size(1000, 700) # optional
-	return driver
+# def init_client_web():
+	# chrome_options = GoogleOptions()
+	# # chrome_options.add_argument("--headless")
+	# driver = webdriver.Chrome(options=chrome_options)
+	# driver.set_window_size(1000, 700) # optional
+	# return driver
 
 def init_client_web():
     # f_profile = webdriver.FirefoxProfile()
@@ -62,8 +62,11 @@ def lock_dispositives(i):
     
         val_ip_div="div"+i.replace(".","")
         try:
-            button__mac=driver.find_element(By.XPATH,"//div[@class='module data']//table//tbody//tr//td[1]//div[@id='"+val_ip_div+"']//..//..//td[6]")
+            button__mac=driver.find_element(By.XPATH,"/html/body/div/div[2]/div[3]/div[2]/table//tbody//tr//td[1]//div[@id='"+val_ip_div+"//..//..//td[6]")
+            print(button__mac.get_attribute("onclick"))
             button__mac.click()
+            # /html/body/div/div[2]/div[3]/div[2]/table/tbody/tr[4]/td[6]/a
+            # div.module:nth-child(3) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(6) > a:nth-child(1)
             sleep(2)
             button_ok = driver.find_element(By.ID,"popup_ok")
             button_ok.click()
@@ -73,6 +76,7 @@ def lock_dispositives(i):
             pass
         try:
             button__mac=driver.find_element(By.XPATH,"//div[@class='module forms data']//table//tbody//tr//td[1]//div[@id='"+val_ip_div+"']//..//..//td[5]")
+            # /html/body/div/div[2]/div[3]/div[3]/table/tbody/tr[3]/td[5]/a
             button__mac.click()
             sleep(2)
             button_ok = driver.find_element(By.ID,"popup_ok")
@@ -126,29 +130,43 @@ def to_window_manager(driver):
 	# 	sleep(2)
 	# except Exception as e:
 	# 	print(e) 
+def core():
+	print("asasa")
+	driver=init_client_web()
+	driver.get("http://10.0.0.1/")
+	sleep(1)
+	login(driver)
+	sleep(1)
+	driver.get("http://10.0.0.1/connected_devices_computers.asp")
 
-driver=init_client_web()
-driver.get("http://10.0.0.1/")
-sleep(1)
-login(driver)
-sleep(1)
-driver.get("http://10.0.0.1/connected_devices_computers.asp")
+# driver=init_client_web()
+# driver.get("http://10.0.0.1/")
+# sleep(1)
+# login(driver)
+# sleep(1)
+# driver.get("http://10.0.0.1/connected_devices_computers.asp")
 
-IP_list=["A4.FC.77.96.CE.8F","2C.CC.44.EB.86.D5","72.7A.C2.80.4A.7B"]
+	IP_list=[ "72.7A.C2.80.4A.7B"]
 # IP_list=["7C:91:22:52:24:4E"]"72.7A.C2.80.4A.7B"
 
 # for i in IP_list:
 
-while True:
-	driver.get("http://10.0.0.1/connected_devices_computers.asp")
-	sleep(randrange(3))
-	lock_dispositives(IP_list[randrange(len(IP_list))])
+	# for i in IP_list:
 
-	to_window_manager(driver)
+	while True:
+		driver.get("http://10.0.0.1/connected_devices_computers.asp")
+		sleep(randrange(3))
+		# print(len(IP_list))
+		ran=randrange(len(IP_list))
+		print(ran)
+		print(IP_list[ran])
+		lock_dispositives(IP_list[ran])
 
-	sleep(5)
-	# for i in IP_list: 
-	unlock(IP_list[randrange(len(IP_list))])
+		# to_window_manager(driver)
+
+		# sleep(5)
+		# # for i in IP_list: 
+		# unlock(IP_list[randrange(len(IP_list))])
 
 
-
+core()

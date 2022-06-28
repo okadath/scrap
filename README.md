@@ -50,3 +50,23 @@ en raspberry hay errores hay que instalar rust para selenoum y todo el dev de py
 https://tekshinobi.com/django-celery-rabbitmq-redis-broker-results-backend/
 
 las plantillas en flask siempre deben ir en /templates
+
+
+sudo apt install python3-pip python3-dev libpq-dev  nginx curl libcairo2-dev libsdl-pango-dev python3-certbot-nginx
+
+sudo -H pip3 install virtualenv
+virtualenv venv
+source venv/bin/activate
+
+
+pipenv lock -r > requirements.txt
+pip install -r requirements.txt
+pip install  gunicorn
+
+
+ 
+sudo cp gunicorn.service /etc/systemd/system/
+sudo systemctl enable gunicorn.service
+sudo systemctl start gunicorn.service
+sudo systemctl daemon-reload
+ 
